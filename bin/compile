@@ -72,7 +72,7 @@ if [ -f "$RUNTIME_FILE" ] ; then
 else
     log "Generating $RUNTIME_FILE from uv Python version"
     PYTHON_VERSION_OUTPUT=$(uv run python --version)
-    echo "${PYTHON_VERSION_OUTPUT//Python /python-}" > "$RUNTIME_FILE"
+    echo "${PYTHON_VERSION_OUTPUT//Python /}" > "$RUNTIME_FILE"
     cat "$RUNTIME_FILE" | indent
 fi
 
